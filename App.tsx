@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
+  
   return (
     <View style={styles.container}>
       <Image
