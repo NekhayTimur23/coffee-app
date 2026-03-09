@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import Button from "./shared/Button/Button";
 
 export default function App() {
-  
   return (
     <View style={styles.container}>
       <Image
         resizeMode="cover"
-        style={[StyleSheet.absoluteFill, { width: "100%", paddingTop: '10%' }]}
+        // style={[StyleSheet.absoluteFill, { width: "100%", paddingTop: '10%' }]}
         source={require("./assets/coffe.png")}
       />
       <LinearGradient
@@ -24,9 +24,7 @@ export default function App() {
         <Text style={styles.text}>
           Свежие зёрна, настоящая арабика и бережная обжарка
         </Text>
-        <Pressable style={styles.button}>
-          <Text>Начать</Text>
-        </Pressable>
+        <Button />
       </View>
     </View>
   );
@@ -59,13 +57,5 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     color: "#A9A9A9",
-  },
-  button: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#C67C4E",
-    height: 62,
-    borderRadius: 16,
-    marginBottom: "10%",
   },
 });
