@@ -1,8 +1,35 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { StyleSheet, Text, View, Image, Animated } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Button from "./shared/Button/Button";
 
 export default function App() {
+  const animetedXY = new Animated.ValueXY({
+    x: 0,
+    y: -100,
+  });
+
+  Animated.timing(animetedXY, {
+    toValue: {
+      x: 0,
+      y: 0,
+    },
+    duration: 800,
+    useNativeDriver: true,
+  }).start();
+
+  const animitedOpacity = new Animated.Value(0);
+
+  const color = animitedOpacity.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["rgba(255, 255, 255, 0)", "rgb(255, 255, 255)"],
+  });
+
+  Animated.timing(animitedOpacity, {
+    toValue: 1,
+    duration: 1500,
+    useNativeDriver: false,
+  }).start();
+
   return (
     <View style={styles.container}>
       <Image
@@ -18,9 +45,18 @@ export default function App() {
         style={styles.contentBlock}
       />
       <View style={styles.content}>
-        <Text style={styles.textTitle}>
+        <Animated.Text
+          style={{
+            ...styles.textTitle,
+            transform: [
+              { translateX: animetedXY.x },
+              { translateY: animetedXY.y },
+            ],
+            color: color,
+          }}
+        >
           Одно из самых{`\n`}вкусных кофе в городе!
-        </Text>
+        </Animated.Text>
         <Text style={styles.text}>
           Свежие зёрна, настоящая арабика и бережная обжарка
         </Text>
@@ -52,7 +88,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 34,
     fontWeight: 600,
-    color: "#fff",
   },
   text: {
     textAlign: "center",
