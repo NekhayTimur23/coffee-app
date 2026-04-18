@@ -1,6 +1,10 @@
+import { Link, LinkProps } from "expo-router";
 import { Pressable, Text, StyleSheet, Animated } from "react-native";
 
-export default function Button() {
+export default function Button({
+  text,
+  ...props
+}: LinkProps & { text: string }) {
   const animetedValue = new Animated.Value(100);
 
   const corol = animetedValue.interpolate({
@@ -26,9 +30,11 @@ export default function Button() {
 
   return (
     <Pressable onPressIn={findIn} onPressOut={findOut}>
-      <Animated.View style={{ ...styles.button, backgroundColor: corol }}>
-        <Text style={styles.text}>Начать</Text>
-      </Animated.View>
+      <Link {...props}>
+        <Animated.View style={{ ...styles.button, backgroundColor: corol }}>
+          <Text style={styles.text}>{text}</Text>
+        </Animated.View>
+      </Link>
     </Pressable>
   );
 }
@@ -39,6 +45,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     // backgroundColor: "#C67C4E",
     height: 62,
+    width: '100%',
     borderRadius: 16,
     marginBottom: "10%",
   },
