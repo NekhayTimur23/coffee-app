@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, Animated } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import Button from "./shared/Button/Button";
+import Button from "../shared/Button/Button";
 
 export default function App() {
   const animetedXY = new Animated.ValueXY({
@@ -35,7 +35,8 @@ export default function App() {
       <Image
         resizeMode="cover"
         // style={[StyleSheet.absoluteFill, { width: "100%", paddingTop: '10%' }]}
-        source={require("./assets/coffe.png")}
+        style={{ width: "100%", alignSelf: "center" }}
+        source={require("../assets/image/coffe.png")}
       />
       <LinearGradient
         colors={["rgba(0,0,0,0)", "#000000"]}
@@ -58,9 +59,9 @@ export default function App() {
           Одно из самых{`\n`}вкусных кофе в городе!
         </Animated.Text>
         <Text style={styles.text}>
-          Свежие зёрна, настоящая арабика и бережная обжарка
+          Свежие зёрна, настоящая арабика и {`\n`}бережная обжарка
         </Text>
-        <Button />
+        <Button href={"./catalog"} text="Войти" />
       </View>
     </View>
   );
@@ -81,16 +82,22 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingHorizontal: 30,
-    gap: 16,
+    gap: 25,
   },
   textTitle: {
-    top: -25,
+    top: 0,
     textAlign: "center",
+    fontFamily: 'SoraSemiBold',
     fontSize: 34,
     fontWeight: 600,
+
   },
   text: {
     textAlign: "center",
     color: "#A9A9A9",
+    fontFamily: 'SoraRegular',
+    fontSize: 14,
+    fontWeight: 400,
+
   },
 });
