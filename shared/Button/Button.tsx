@@ -1,7 +1,6 @@
 import { Pressable, Text, StyleSheet, Animated } from "react-native";
 
 export default function Button() {
-  
   const animetedValue = new Animated.Value(100);
 
   const corol = animetedValue.interpolate({

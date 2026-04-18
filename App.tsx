@@ -1,21 +1,12 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Pressable,
-  Animated,
-} from "react-native";
+import { StyleSheet, Text, View, Image, Animated } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Button from "./shared/Button/Button";
 
 export default function App() {
-  
   const animetedXY = new Animated.ValueXY({
     x: 0,
     y: -100,
   });
-
 
   Animated.timing(animetedXY, {
     toValue: {
@@ -31,7 +22,7 @@ export default function App() {
   const color = animitedOpacity.interpolate({
     inputRange: [0, 1],
     outputRange: ["rgba(255, 255, 255, 0)", "rgb(255, 255, 255)"],
-  })
+  });
 
   Animated.timing(animitedOpacity, {
     toValue: 1,
@@ -57,7 +48,10 @@ export default function App() {
         <Animated.Text
           style={{
             ...styles.textTitle,
-            transform: [{ translateX: animetedXY.x }, { translateY: animetedXY.y }],
+            transform: [
+              { translateX: animetedXY.x },
+              { translateY: animetedXY.y },
+            ],
             color: color,
           }}
         >
