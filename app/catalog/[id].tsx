@@ -1,7 +1,7 @@
 import { Link, useLocalSearchParams } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function IdPage() {
+export default function CardIdPage() {
   const { id } = useLocalSearchParams();
   return (
     <View style={styles.container}>

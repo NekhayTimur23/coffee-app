@@ -11,7 +11,7 @@ export default function Catalog() {
       <Link href={"/catalog/223"} style={styles.text}>
         Карточка
       </Link>
-      <Link href={"/card"} style={styles.text}>
+      <Link href={"/cart"} style={styles.text}>
         Корзина
       </Link>
       <Link href={"/"} style={styles.text}>

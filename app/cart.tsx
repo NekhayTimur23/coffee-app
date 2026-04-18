@@ -1,7 +1,7 @@
 import { Link } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function CardPage() {
+export default function CartPage() {
   return (
     <View style={styles.container}>
       <Text style={{ color: "#ff0000" }}>Card</Text>

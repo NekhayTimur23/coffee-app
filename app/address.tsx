@@ -5,7 +5,7 @@ export default function AddressPage() {
   return (
     <View style={styles.container}>
       <Text style={{ color: "#fff" }}>address</Text>
-      <Link href={"/card"} style={styles.text}>
+      <Link href={"/cart"} style={styles.text}>
         Корзина
       </Link>
       <Link href={"/catalog"} style={styles.text}>
