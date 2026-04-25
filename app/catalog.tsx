@@ -14,9 +14,10 @@ import Card from "../shared/Card/Card";
 import MainLink from "../assets/icon/mainLink";
 import BasketLink from "../assets/icon/basketLink";
 import EditAddress from "../assets/icon/editAddress";
+import CardLoading from "../shared/Card/CardLoading";
 
 export default function Catalog() {
-  const [, setLoadingRequest] = useState<boolean>(false);
+  const [loadingRequest, setLoadingRequest] = useState<boolean>(true);
 
   const [typeCoffe, setTypeCoffe] = useAtom(coffeTypeAtom);
   const [cards, setCards] = useAtom(setCardInObject);
@@ -49,6 +50,7 @@ export default function Catalog() {
 
   const cardArr = Object.values(cards.cards);
 
+  const loaderArr = [1, 2, 3, 4, 5, 6];
   return (
     <View style={styles.container}>
       <View style={styles.adressAndInput}>
@@ -116,21 +118,21 @@ export default function Catalog() {
           </Text>
         </View>
         <View style={styles.cardsContent}>
-          {cardArr.map((e) => {
-            return (
-              <Card
-                key={e.id}
-                id={e.id}
-                name={e.name}
-                subTitle={e.subTitle}
-                type={e.type}
-                price={e.price}
-                image={e.image}
-                description={e.description}
-                rating={e.rating}
-              />
-            );
-          })}
+          {loadingRequest
+            ? loaderArr.map((e) => <CardLoading key={e} />)
+            : cardArr.map((e) => (
+                <Card
+                  key={e.id}
+                  id={e.id}
+                  name={e.name}
+                  subTitle={e.subTitle}
+                  type={e.type}
+                  price={e.price}
+                  image={e.image}
+                  description={e.description}
+                  rating={e.rating}
+                />
+              ))}
         </View>
       </View>
       <View style={styles.footerNavigation}>
