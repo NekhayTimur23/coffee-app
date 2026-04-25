@@ -39,6 +39,7 @@ export default function RootLayout() {
           contentStyle: {
             backgroundColor: "#000",
             paddingTop: insets.top,
+            
           },
         }}
       >
