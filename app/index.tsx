@@ -34,7 +34,6 @@ export default function App() {
     <View style={styles.container}>
       <Image
         resizeMode="cover"
-        // style={[StyleSheet.absoluteFill, { width: "100%", paddingTop: '10%' }]}
         style={{ width: "100%", alignSelf: "center" }}
         source={require("../assets/image/coffe.png")}
       />
