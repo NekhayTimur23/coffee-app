@@ -32,5 +32,4 @@ export const setCardInObject = atom(
 
 export const coffeTypeAtom = atom<string>("all");
 
-export const coffeInputAtom = atom<string>('');
-
+export const coffeInputAtom = atom<string>("");

@@ -60,7 +60,7 @@ export default function App() {
         <Text style={styles.text}>
           Свежие зёрна, настоящая арабика и {`\n`}бережная обжарка
         </Text>
-        <Button href={"./catalog"} text="Войти" />
+        <Button href={"/catalog"} text="Войти" />
       </View>
     </View>
   );
@@ -86,17 +86,15 @@ const styles = StyleSheet.create({
   textTitle: {
     top: 0,
     textAlign: "center",
-    fontFamily: 'SoraSemiBold',
+    fontFamily: "SoraSemiBold",
     fontSize: 34,
     fontWeight: 600,
-
   },
   text: {
     textAlign: "center",
     color: "#A9A9A9",
-    fontFamily: 'SoraRegular',
+    fontFamily: "SoraRegular",
     fontSize: 14,
     fontWeight: 400,
-
   },
 });

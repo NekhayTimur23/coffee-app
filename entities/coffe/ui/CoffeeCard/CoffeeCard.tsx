@@ -1,33 +1,35 @@
-import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
-import RaitingStar from "../../assets/icon/ratingStar";
-import PlusButtom from "../../assets/icon/plusButton";
+import { View, Image, StyleSheet, Text } from "react-native";
+import { AtomCardCoffe } from "../../model/coffe.model";
+import RaitingStar from "../../../../assets/icon/ratingStar";
+import PlusButtom from "../../../../assets/icon/plusButton";
 
-export default function CardLoading() {
+export default function Card({
+  name,
+  subTitle,
+  price,
+  image,
+  rating,
+}: AtomCardCoffe) {
   return (
     <View style={styles.card}>
       <View style={styles.cardImg}>
         <View style={styles.cardImgRating}>
           <RaitingStar />
-          <Text style={styles.ratingText}></Text>
+          <Text style={styles.ratingText}>{rating}</Text>
         </View>
-        <View
-          style={{
-            width: "100%",
-            height: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <ActivityIndicator size={"large"} />
-        </View>
+        <Image
+          resizeMode={"cover"}
+          style={{ width: "100%", height: "100%" }}
+          source={{ uri: `${image}` }}
+        />
       </View>
       <View style={styles.priceAndButton}>
         <View style={styles.cardDescription}>
-          <Text style={styles.nameText}></Text>
-          <Text style={styles.subTitleText}></Text>
+          <Text style={styles.nameText}>{name}</Text>
+          <Text style={styles.subTitleText}>{subTitle}</Text>
         </View>
         <View style={styles.cardPrice}>
-          <Text style={styles.priceText}></Text>
+          <Text style={styles.priceText}>{price} ₽</Text>
           <View style={styles.buttonAdd}>
             <PlusButtom />
           </View>
