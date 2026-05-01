@@ -1,15 +1,15 @@
 import { Link } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function CartPage() {
+export default function AddressPage() {
   return (
     <View style={styles.container}>
-      <Text style={{ color: "#ff0000" }}>Card</Text>
-      <Link href={"/success"} style={styles.text}>
-        Успешная покупка
+      <Text style={{ color: "#fff" }}>address</Text>
+      <Link href={"/cart"} style={styles.text}>
+        Корзина
       </Link>
-      <Link href={"/address"} style={styles.text}>
-        Назад в адресс
+      <Link href={"/catalog"} style={styles.text}>
+        Каталог
       </Link>
     </View>
   );

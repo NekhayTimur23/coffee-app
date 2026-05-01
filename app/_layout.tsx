@@ -1,4 +1,4 @@
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, usePathname } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import {
   SafeAreaProvider,
@@ -7,12 +7,13 @@ import {
 
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
+import { Colors } from "../shared/tokens";
 
 // SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
+  const pathName = usePathname();
   const insets = useSafeAreaInsets();
-
   const [loaded] = useFonts({
     SoraRegular: require("../assets/fonts/Sora-Regular.ttf"),
     SoraSemiBold: require("../assets/fonts/Sora-SemiBold.ttf"),
@@ -30,20 +31,29 @@ export default function RootLayout() {
     return null;
   }
 
+  const colorBackground = () => {
+    if (pathName === "/catalog" || pathName === "/") {
+      return Colors.black;
+    }
+
+    return Colors.whiteBackground;
+  };
+
+ 
+
   return (
     <SafeAreaProvider>
-      <StatusBar style="light" />
+      <StatusBar style='light' />
       <Stack
         screenOptions={{
           headerShown: false,
           contentStyle: {
-            backgroundColor: "#000",
+            backgroundColor: colorBackground(),
             paddingTop: insets.top,
           },
         }}
       >
         <Stack.Screen name="index" />
-        <Stack.Screen name="catalog" />
       </Stack>
     </SafeAreaProvider>
   );

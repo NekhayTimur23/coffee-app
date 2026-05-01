@@ -34,7 +34,6 @@ export default function App() {
     <View style={styles.container}>
       <Image
         resizeMode="cover"
-        // style={[StyleSheet.absoluteFill, { width: "100%", paddingTop: '10%' }]}
         style={{ width: "100%", alignSelf: "center" }}
         source={require("../assets/image/coffe.png")}
       />
@@ -61,7 +60,7 @@ export default function App() {
         <Text style={styles.text}>
           Свежие зёрна, настоящая арабика и {`\n`}бережная обжарка
         </Text>
-        <Button href={"./catalog"} text="Войти" />
+        <Button href={"/catalog"} text="Войти" />
       </View>
     </View>
   );
@@ -87,17 +86,15 @@ const styles = StyleSheet.create({
   textTitle: {
     top: 0,
     textAlign: "center",
-    fontFamily: 'SoraSemiBold',
+    fontFamily: "SoraSemiBold",
     fontSize: 34,
     fontWeight: 600,
-
   },
   text: {
     textAlign: "center",
     color: "#A9A9A9",
-    fontFamily: 'SoraRegular',
+    fontFamily: "SoraRegular",
     fontSize: 14,
     fontWeight: 400,
-
   },
 });

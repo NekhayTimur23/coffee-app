@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/coffe.png",
     "userInterfaceStyle": "light",
+    "scheme": "coffeeapp",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/coffe.png",
